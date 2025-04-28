@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0">
+	<title>VIThreads</title>
+	<link rel="stylesheet"
+		href="styleadmin.css">
+	<link rel="stylesheet"
+		href="responsive.css">
+	<link rel="stylesheet"
+	    href="homepage.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+
+<body>
+	<header>
+		<div class="logosec">
+			<div class="logo">Admin Dashboard</div>
+			<img src="views/menu.svg"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+		</div>		
+                
+					
+	</header>
+
+	<div class="main-container" id="mc">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option1" id="1" onclick="window.location.href='/adminhome'">
+						<img src="views/home.svg"
+							class="nav-img"
+							alt="home">
+						<h3>Home</h3>
+					</div>
+
+					<div class="nav-option option2" id="2" onclick="window.location.href='/insert'" style="color: white;">
+						<img src="views/insert.svg"
+							class="nav-img"
+							alt="insertcontent">
+						<h3> Insert Content</h3>
+					</div>
+
+					<div class="nav-option option3" id="3" onclick="optclk(this.id)">
+						<img src="views/delete.svg"
+							class="nav-img"
+							alt="deletecontent">
+						<h3>Delete Content</h3>
+					</div>
+
+					
+					<div class="nav-option logout" id="4" onclick="optnclk()"> 
+						<img src="views/logout.svg"
+							class="nav-img"
+							alt="logout">
+						<h3>Logout</h3>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+          <div class="insert" id="ins">
+			<div class="box-container">
+				     
+				<form id="sumForm" action="/summarize" method="get">
+					<div class="input-field">
+					<h3>    News</h3>
+					<textarea id="news" placeholder="Enter your news here..." type="text" name="newsArea" rows="8" cols="120"  required>{{message1}}</textarea>
+					</div>
+					<div class="inputfield"></br>
+						<button type="submit" class="sumsave">Summarize</button>
+					</div>
+					<div class="input-field1">
+					<h3>    Summary</h3>
+					<textarea id="summ" rows="3" cols="120" name="summary">{{message2}}</textarea>
+					</div>
+				</form>
+				<form id="saveForm" action="/saveDb" method="post" enctype="multipart/form-data">
+				    <div class="inputTitle">
+						<h3>News Title</h3>
+						<input type="text" id="title" name="title" placeholder="Enter news title..." required>
+					</div>
+					<div class="inpt">
+					<div class="input-field2">
+						<div class="input-field3">
+						<h3>    Date</h3><br>
+						<div><input class="dt" type="date" name="dates" required></input></div>
+						</div>
+						<div class="input-field4">
+						<h3>    Genre</h3>
+						<select name="Genre" required>
+							<option value="Academics">-Choose Genre- </option>
+							<option value="Academics">Academics</option>
+							<option value="Placements">Placements</option>
+							<option value="Sports">Sports</option>
+							<option value="Events ">Events</option>
+						</select>
+		
+						</div>
+
+					</div>
+		
+							
+					<div class="input-field2">
+						<div class="input-field3">
+						<h3>    Campus</h3>
+						<select name="cam" id="cam" required>
+							<option value="VIT Vellore">-Choose Campus-</option>
+							<option value="VIT Vellore">VIT Vellore</option>
+							<option value="VIT Chennai">VIT Chennai</option>
+							<option value="VIT Bhopal">VIT Bhopal</option>
+							<option value="VIT AP">VIT AP</option>
+						</select> 
+						</div>
+						<div class="input-field5">
+						<h3>    Image</h3>
+						<input name="file" type="file" id="myFile" accept="image/*" class="filename" required></input>
+						</div>
+					</div>
+
+					
+				
+			
+						<div class="input-field2">
+							<button class="sub" type="submit" >Save</button>
+						</div>
+						</div>
+                </form>
+            </div>
+          </div>
+        </div>
+		
+        <script>
+            let menuicn = document.querySelector(".menuicn");
+            let nav = document.querySelector(".navcontainer");
+            
+            menuicn.addEventListener("click", () => {
+                nav.classList.toggle("navclose");
+            })
+			
+			
+			function optnclk(){
+				window.location.replace("login.html");	
+			}
+			
+        </script>
+
+</body>
+</html>

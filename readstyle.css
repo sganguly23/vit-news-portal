@@ -9,7 +9,6 @@ body ,html{
     height: 100%;
     width:100%;
     position: relative;
-    visibility: visible;
     background-image: url("newspaper.jpg");
     background-position: center;
     background-size: cover;
@@ -19,7 +18,20 @@ body ,html{
 #first ,#second{
     display: block;
 }
-
+.front{
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: visible;
+}
+.front .gif{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 .navbar{
     position: fixed;
     width:100%;
@@ -82,104 +94,12 @@ li{
     list-style: none;
     z-index: 2;
 }
-.input-box{
-    position: relative;
-    height:55px;
-    max-width: 0;
-    width:100%;
-    margin: 0 10px;
-    border-radius: 6px;
-    background-color: #1c232e;
-    margin-right: 60px;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
+
+#sum{
+    max-height: 430px;
+    overflow-y: auto;
 }
-.input-box input{
-    position: relative;
-    height: 100%;
-    width: 100%;
-    padding: 0 15px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #1c232e;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.input-box .search{
-    position: absolute;
-    left: -25px;
-    top: 0;
-    height: 100%;
-    width: 60px;
-    border-radius: 6px;
-    background-color: #1c232e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    
-}
-.search .sbtn{
-    border:none;
-    background-color: #1c232e;
-    border-radius: 5px;
-}
-.search .search-icon{
-    font-size: 30px;
-    color: whitesmoke;
-    border:none;
-    background-color: #1c232e;
-}
-.input-box .close-icon{
-    position: absolute;
-    right: -80px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: whitesmoke;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
-}
-.input-box.open .close-icon{
-    opacity: 1;
-    right: -120px;
-    pointer-events: auto;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.input-box.open{
-    max-width: 350px;
-    margin-right: 140px;
-}
-.input-box.open input{
-    padding: 0 10px 0 50px;
-    right: -15px;
-} 
-.sbtn:hover{
-    background: #323c4e;
-}
-.sbtn:hover i{
-    background: #323c4e;
-}
-.input-box.open .search{
-    left:0;
-    border-radius: 6px 0 0 6px;
-    background-color: whitesmoke;
-} 
-.input-box.open .search .sbtn{
-    background-color: whitesmoke;
-}
-.input-box.open .search .search-icon{
-    border-radius: 6px 0 0 6px;
-    color:#1c232e;
-    background-color: whitesmoke;
-} 
-.input-box.open .close-icon{
-    transform: translateY(-50%) rotate(180deg);
-} 
+
 /* Dropdown menu */
 .content .links ul{
     position: absolute;
@@ -225,7 +145,7 @@ div{
 .nbox{
     position: relative;
     width: 900px;
-    height:290px;
+    height:500px;
     background: #dbd6d1;
     color:#1c232e;
     margin-right: auto;
@@ -234,20 +154,17 @@ div{
     padding:8px;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     border-color: rgba(112,155,162,1);
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
 }
 .frame{
-    width:350px;
+    width:100%;
     height:250px;
+    align-items: center;
     padding-right: 6px;
-}
-
-.summary{
-    max-height: fit-content;
-    overflow-y: auto;
 }
 .reactions button{
     background-color: transparent;
@@ -259,13 +176,10 @@ div{
 }
 .pic{
     position: relative;
-}
-.nbox form{
-    width:100%;
-    height:100%;
+    margin-left: 275px;
 }
 .newsarea{
-    width: 650px;
+    width: 100%;
 }
 h4{
     margin-block-start: 5px;
